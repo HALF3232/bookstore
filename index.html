@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>在线图书商城</title>
+  <meta name="description" content="拾光书城——用 HTML5 + CSS3 + JavaScript 实现的图书商城单页应用（模拟数据，无后端）">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- 页面跳转提示（无 JS 时显示） -->
+  <noscript>
+    <p class="noscript-tip">这个页面需要开启 JavaScript 才能浏览图书和购物车。</p>
+  </noscript>
+
+  <!-- 顶部导航：内容由 js/app.js 生成 -->
+  <header class="site-header" id="siteHeader"></header>
+
+  <!-- 主体：路由切换时整块替换 -->
+  <main class="container view" id="view"></main>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark">书</span>
+        <div>
+          <p class="footer-name">拾光书城</p>
+          <p class="footer-desc">前端课程作业示例：HTML5 + CSS3 + JavaScript，数据为本地模拟，不含真实交易。</p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="页脚导航">
+        <a href="#/">首页</a>
+        <a href="#/books">全部图书</a>
+        <a href="#/cart">购物车</a>
+        <a href="#/favorites">我的收藏</a>
+      </nav>
+      <p class="footer-meta">共收录 <span id="footerCount">0</span> 本图书 · 客服时间 9:00 - 21:00</p>
+    </div>
+  </footer>
+
+  <!-- 提示消息容器 -->
+  <div class="toast-area" id="toastArea" aria-live="polite"></div>
+
+  <!-- 返回顶部 -->
+  <button class="to-top" id="toTop" type="button" data-action="to-top" aria-label="返回顶部">↑</button>
+
+  <!-- 脚本按依赖顺序加载：工具 → 数据 → 状态 → 路由 → 组件 → 视图 → 入口 -->
+  <script src="js/util.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/views.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
